@@ -8,22 +8,12 @@ myScreen = Screen()
 # Main Program
 myTurtle.shape('turtle')
 myTurtle.color('red')
-myTurtle.left(45)
-myTurtle.forward(200)
-n=6
-while n>0:
-    myTurtle.left(30)
-    myTurtle.forward(40)
-    n -= 1
-myTurtle.right(90)
-myTurtle.forward(40)
-m = 5
-while m>0:
-    myTurtle.left(30)
-    myTurtle.forward(40)
-    m-=1
-myTurtle.left(27)
-myTurtle.forward(180)
+
+n = 4
+while n >0 :
+    myTurtle.forward(200)
+    myTurtle.right(90)
+    n-=1
 
 
 myScreen.exitonclick()
