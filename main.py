@@ -1,31 +1,31 @@
 # Imports
-from turtle import Turtle, Screen
+from turtle import Turtle, Screen, colormode
+import random
 
 # Objects
 myTurtle = Turtle()
 myScreen = Screen()
 
 # Main Program
-myTurtle.shape('turtle')
-myTurtle.color('red')
+colormode(255)
+myTurtle.speed("fastest")
 
-def shape(angle, color, n):
-    myTurtle.color(color)
-    while n > 0:
-        myTurtle.forward(100)
-        myTurtle.right(angle)
-        n -= 1
 
-myTurtle.forward(100)
-myTurtle.right(120)
-myTurtle.forward(100)
-myTurtle.right(120)
-shape(90, 'yellow', 4)
-shape(72, 'pink', 5)
-shape(60,'blue',6)
-shape(51.4, 'red', 7)
-shape(45, 'purple', 8)
-shape(40, 'green', 9)
-shape(36, 'black', 10)
+def random_color():
+    r = random.randint(0, 255)
+    g = random.randint(0, 255)
+    b = random.randint(0, 255)
+    return (r, g, b)
+
+
+def draw_spirograph(size):
+    for i in range(int(360/size)):
+        myTurtle.color(random_color())
+        myTurtle.circle(100)
+        myTurtle.setheading(myTurtle.heading() + size)
+
+
+draw_spirograph(5)
+
 
 myScreen.exitonclick()
